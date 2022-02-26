@@ -3,24 +3,6 @@ const _import = require('@/router/import_' + process.env.NODE_ENV)
 
 export default [
   {
-    path: '/companys',
-    component: Layout,
-    redirect: 'noredirect',
-    name: 'companys',
-    meta: {
-      title: '企业管理',
-      icon: 'component'
-    },
-    children: [
-      {
-        path: 'list',
-        component: _import('hmmm/pages/companys'),
-        name: 'companys-list',
-        meta: { title: '企业管理', noCache: true, icon: 'peoples' }
-      }
-    ]
-  },
-  {
     path: '/questions',
     component: Layout,
     redirect: 'noredirect',

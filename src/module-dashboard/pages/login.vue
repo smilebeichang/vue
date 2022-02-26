@@ -189,7 +189,7 @@ $light_gray: #333;
   width: 100%;
   background-color: $bg;
 
-  background: url('./../assets/bg.jpg');
+  background: url('../assets/bg.jpg');
   -moz-background-size: 100% 100%;
   background-size: 100% 100%;
   background-repeat: no-repeat;

@@ -5,7 +5,7 @@
       <el-form label-width="80px">
         <el-row :gutter="20">
           <el-col :span="6">
-            <el-form-item label="活动名称">
+            <el-form-item label="题库名称">
               <el-input v-model="subjectList.subjectName"></el-input>
             </el-form-item>
           </el-col>
@@ -35,8 +35,22 @@
       <el-table :data="list" style="width: 100%">
         <el-table-column type="index" label="序号" width="60"></el-table-column>
         <el-table-column
-          prop="subjectName"
-          label="学科名称"
+          prop="type"
+          label="题型"
+          width="170"
+        ></el-table-column>
+        <el-table-column prop="pattern" label="模式" width="140"></el-table-column>
+
+        <el-table-column prop="isFrontDisplay" label="前台是否显示2" width="140">
+          <template slot-scope="scope">
+            {{ scope.row.isFrontDisplay === 1 ? '是' : '否' }}
+          </template>
+        </el-table-column>
+        <el-table-column prop="adi3_r" label="adi3的得分" width="140"></el-table-column>
+        <el-table-column prop="tags" label="标签2" width="140"></el-table-column>
+        <el-table-column
+          prop="totals"
+          label="题目数量"
           width="140"
         ></el-table-column>
         <el-table-column
@@ -49,22 +63,7 @@
             {{ scope.row.addDate | parseTimeByString }}
           </template>
         </el-table-column>
-        <el-table-column prop="isFrontDisplay" label="前台是否显示" width="140">
-          <template slot-scope="scope">
-            {{ scope.row.isFrontDisplay === 1 ? '是' : '否' }}
-          </template>
-        </el-table-column>
-        <el-table-column
-          prop="twoLevelDirectory"
-          label="二级目录"
-          width="140"
-        ></el-table-column>
-        <el-table-column prop="tags" label="标签" width="140"></el-table-column>
-        <el-table-column
-          prop="totals"
-          label="题目数量"
-          width="140"
-        ></el-table-column>
+
         <el-table-column label="操作" width="250">
           <template slot-scope="scope">
             <!-- tags -->
@@ -88,12 +87,8 @@
               "
               >学科标签</el-button
             >
-            <el-button class="btns" type="text" @click="revise(scope.row)"
-              >修改</el-button
-            >
-            <el-button class="btns" type="text" @click="delRole(scope.row)"
-              >删除</el-button
-            >
+            <el-button class="btns" type="text" @click="revise(scope.row)">修改</el-button>
+            <el-button class="btns" type="text" @click="delRole(scope.row)">删除</el-button>
           </template>
         </el-table-column>
       </el-table>

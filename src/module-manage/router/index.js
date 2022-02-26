@@ -8,34 +8,11 @@ export default [
     redirect: 'noredirect',
     name: 'base',
     meta: {
-      title: '后台管理',
-      icon: 'people'
+      // title: '后台管理',
+      // icon: 'people'
     },
+    //
     children: [
-      {
-        path: 'users',
-        component: _import('manage/pages/users'),
-        name: 'base-users',
-        meta: { title: '用户', noCache: true, icon: 'component' }
-      },
-      {
-        path: 'menus',
-        name: 'base-menus',
-        component: _import('manage/pages/menus'),
-        meta: { title: '菜单', noCache: true, icon: 'component' }
-      },
-      {
-        path: 'permissions',
-        name: 'base-permissions',
-        component: _import('manage/pages/permissions'),
-        meta: { title: '权限', noCache: true, icon: 'component' }
-      },
-      {
-        path: 'journal',
-        name: 'base-journal',
-        component: _import('manage/pages/journal'),
-        meta: { title: '日志', noCache: true, icon: 'component' }
-      }
     ]
   }
 ]

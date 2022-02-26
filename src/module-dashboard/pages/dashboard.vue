@@ -4,13 +4,13 @@
       <el-col :xs="24" :sm="6" :span="6">
         <el-card class="box-card" :body-style="{ padding: '5px 20px' , minHeight: '230px' }">
           <div class="header">
-            <span>总销售额</span>
+            <span>总构题次数</span>
             <el-tooltip class="item" effect="dark" content="指标说明" placement="top">
               <i class="el-icon-warning"></i>
             </el-tooltip>
           </div>
           <div class="total">
-            ¥ 126,560
+                 12,560
           </div>
           <div class="trends">
             <span>周同比 12% <i class="el-icon-caret-top"></i></span>
@@ -18,7 +18,7 @@
           </div>
           <div class="hr"></div>
           <div class="footer">
-            <span>日均销售额</span> <span>￥12,423</span>
+            <span>日均构题次数</span> <span>243</span>
           </div>
         </el-card>
       </el-col>
@@ -42,7 +42,7 @@
       <el-col :xs="24" :sm="6" :span="6">
         <el-card class="box-card" :body-style="{ padding: '5px 20px' , minHeight: '230px' }">
           <div class="header">
-            <span>支付笔数</span>
+            <span>指标说明</span>
             <el-tooltip class="item" effect="dark" content="指标说明" placement="top">
               <i class="el-icon-warning"></i>
             </el-tooltip>
@@ -59,7 +59,7 @@
       <el-col :xs="24" :sm="6" :span="6">
         <el-card class="box-card" :body-style="{ padding: '5px 20px' , minHeight: '230px' }">
           <div class="header">
-            <span>运营活动效果</span>
+            <span>试题效果</span>
             <el-tooltip class="item" effect="dark" content="指标说明" placement="top">
               <i class="el-icon-warning"></i>
             </el-tooltip>
@@ -92,7 +92,7 @@
         </el-date-picker>
       </div>
       <el-tabs v-model="activeName" @tab-click="handleSetLineChartData">
-        <el-tab-pane label="销售额" name="newVisitis"></el-tab-pane>
+        <el-tab-pane label="题目更新数" name="newVisitis"></el-tab-pane>
         <el-tab-pane label="访问量" name="messages"></el-tab-pane>
         <el-row :gutter="20">
           <el-col :xs="24" :sm="16">
@@ -102,7 +102,7 @@
           </el-col>
           <el-col :xs="24" :sm="8">
             <div class="table">
-              <h4>门店销售额排名</h4>
+              <h4>题目搜索排名</h4>
               <ul>
                 <li>
                   <el-row class="row" v-for="(item, index) in salesTable" :key="'sals-'+index">
@@ -120,83 +120,7 @@
     <!-- 销售表 /-->
 
     <br>
-    <!-- 搜索热度 -->
-    <el-row :gutter="20" >
-      <el-col :xs="24" :sm="12" >
-        <el-card class="hots">
-          <div slot="header" class="header">
-            <span>线上热门搜索</span>
-            <el-dropdown trigger="click" class="ops">
-              <span class="el-dropdown-link">
-                ...<i class="el-icon-arrow-down el-icon--right"></i>
-              </span>
-              <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item>菜单一</el-dropdown-item>
-                <el-dropdown-item>菜单二</el-dropdown-item>
-              </el-dropdown-menu>
-            </el-dropdown>
-          </div>
-          <el-table height="280" :data="hotsTableData" style="width: 100%" :default-sort = "{prop: 'users', order: 'descending'}">
-            <el-table-column type="index" width="50"></el-table-column>
-            <el-table-column prop="title" label="关键词"></el-table-column>
-            <el-table-column prop="users" label="人数" sortable width="80"></el-table-column>
-            <el-table-column prop="increase" label="周增长率" sortable width="100"></el-table-column>
-          </el-table>
-          <el-pagination class="pagination" background layout="prev, pager, next" :total="500"></el-pagination>
-        </el-card>
-      </el-col>
-      <el-col :xs="24" :sm="12" >
-        <el-card class="hots">
-          <div slot="header" class="header">
-            <span>销售额类别占比</span>
-            <el-dropdown trigger="click" class="ops">
-              <span class="el-dropdown-link">
-                ...<i class="el-icon-arrow-down el-icon--right"></i>
-              </span>
-              <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item>菜单一</el-dropdown-item>
-                <el-dropdown-item>菜单二</el-dropdown-item>
-              </el-dropdown-menu>
-            </el-dropdown>
-          </div>
-          <div>
-            <el-radio-group v-model="radioArea" size="mini">
-              <el-radio-button label="全渠道"></el-radio-button>
-              <el-radio-button label="直达"></el-radio-button>
-              <el-radio-button label="百度"></el-radio-button>
-              <el-radio-button label="谷歌"></el-radio-button>
-              <el-radio-button label="必应"></el-radio-button>
-              <el-radio-button label="其它"></el-radio-button>
-            </el-radio-group>
-          </div>
-          <div class="chart">
-            <area-chart></area-chart>
-          </div>
-        </el-card>
-      </el-col>
-    </el-row>
-    <!-- 搜索热度 /-->
 
-    <br>
-    <!-- 周搜索趋势 -->
-    <el-card class="hots">
-      <div slot="header" class="header">
-        <span>周搜索趋势</span>
-        <el-dropdown trigger="click" class="ops">
-          <span class="el-dropdown-link">
-            ...<i class="el-icon-arrow-down el-icon--right"></i>
-          </span>
-          <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>菜单一</el-dropdown-item>
-            <el-dropdown-item>菜单二</el-dropdown-item>
-          </el-dropdown-menu>
-        </el-dropdown>
-      </div>
-      <div class="chart">
-        <bar-chart></bar-chart>
-      </div>
-    </el-card>
-    <!-- 周搜索趋势 /-->
 
   </div>
 </template>
@@ -284,22 +208,25 @@ export default {
   },
   computed: {},
   created () {
-    for (let i = 1; i < 9; i++) {
+    for (let i = 1; i < 5; i++) {
       this.salesTable.push(
         {
           num: i,
-          title: `工专路 ${i} 号店`,
-          val: '323,234'
-        }
-      )
-      this.hotsTableData.push(
+          title: `不等式`,
+          val: Math.round(Math.random() * 70 + 30)
+        },
         {
           num: i,
-          title: `搜索关键词-${i}`,
-          users: Math.round(Math.random() * 500 + 300),
-          increase: `${Math.round(Math.random() * 50 + 40)}%`
+          title: `等差等比数列`,
+          val: Math.round(Math.random() * 80 + 20)
+        },
+        {
+          num: i,
+          title: `概率基础`,
+          val: Math.round(Math.random() * 90 + 10)
         }
       )
+
     }
   }
 }

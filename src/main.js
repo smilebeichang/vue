@@ -17,7 +17,7 @@ import 'font-awesome/css/font-awesome.css'
  * 注册 - 业务模块
  */
 import dashboard from '@/module-dashboard/' // 面板
-import base from '@/module-manage/' // 用户管理
+//import base from '@/module-manage/' // 用户管理
 import hmmm from '@/module-hmmm/' // Niche GA
 
 /* *
@@ -30,7 +30,7 @@ import 'quill/dist/quill.bubble.css'
 Vue.use(VueQuillEditor)
 
 Vue.use(dashboard, store)
-Vue.use(base, store)
+//Vue.use(base, store)
 // Vue.use(list, store)
 // Vue.use(form, store)
 // Vue.use(details, store)
